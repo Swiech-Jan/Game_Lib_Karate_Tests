@@ -1,2 +1,3 @@
 # Game_Lib_Karate_Tests
-Test suite for Game Library project
+Test suite for Game Library project: https://github.com/sklyarVi/gameLibraryNodeJS?fbclid=IwAR3ezsD3dtIQoKf7oWRTKKdwANfOpAXSLzuVSMm3N-AKuQlF6SilUbBvfVk
+
