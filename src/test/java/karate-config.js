@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    baseUrl: 'http://localhost:5555'
   }
   if (env == 'dev') {
     // customize
