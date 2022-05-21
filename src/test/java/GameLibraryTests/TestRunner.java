@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class BasicFeatureRunner {
+class TestRunner {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:BasicFeatureRunner")
+        Results results = Runner.path("classpath:GameLibraryTests")
                 //.outputCucumberJson(true)
                 .parallel(5);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());

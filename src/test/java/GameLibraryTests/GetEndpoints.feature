@@ -1,4 +1,4 @@
-Feature: Simple Smoke Tests Of Express Server Endpoints
+Feature: Test Cases for all GET methods exposed by Express Sever
 
      # List of Test Cases:
 
@@ -11,21 +11,19 @@ Feature: Simple Smoke Tests Of Express Server Endpoints
 
 
     Background:
-    # not needed
+        * url baseUrl
 
     Scenario: get all users - testing /users endpoint
 
-        * url baseUrl
         * path 'users'
         * method get
         * status 200
         * match response.users != []
-        * match each response.users == { id: '#number', nickname: '#string', name: '#string', last name: '#string', password: "#string", is admin: "#boolean",  age: '#number' }
+        * match each response.users == { id: '#number', nickname: '#string', name: '#string', lastName: '#string', password: "#string", isAdmin: "#boolean",  age: '#number' }
         * print 'users response: ', response
 
     Scenario Outline: get user by id - testing /user/id endpoint
 
-        * url baseUrl
         * path 'user/' + '<id>'
         * method get
         * status 200
@@ -33,16 +31,15 @@ Feature: Simple Smoke Tests Of Express Server Endpoints
         * match user == <expectedResponse>
 
         Examples:
-            | id | expectedResponse                                                                                                      |
-            | 1  | { id: 1, nickname: "Hellscream", name: "John", last name: "Black", password: "password01", is admin: true, age: 32 }  |
-            | 2  | { id: 2, nickname: "Windrunner", name: "Kate", last name: "Smith", password: "password02", is admin: false, age: 28 } |
-            | 3  | { id: 3, nickname: "Malfurion", name: "Eddie", last name: "Havoc", password: "password03", is admin: false, age: 27 } |
-            | 4  | { id: 4, nickname: "Illidan", name: "Malcolm", last name: "Green", password: "password04", is admin: false, age: 23 } |
-            | 0  | "Provided user id is invalid!"                                                                                        |
+            | id | expectedResponse                                                                                                    |
+            | 1  | { id: 1, nickname: "Hellscream", name: "John", lastName: "Black", password: "password01", isAdmin: true, age: 32 }  |
+            | 2  | { id: 2, nickname: "Windrunner", name: "Kate", lastName: "Smith", password: "password02", isAdmin: false, age: 28 } |
+            | 3  | { id: 3, nickname: "Malfurion", name: "Eddie", lastName: "Havoc", password: "password03", isAdmin: false, age: 27 } |
+            | 4  | { id: 4, nickname: "Illidan", name: "Malcolm", lastName: "Green", password: "password04", isAdmin: false, age: 23 } |
+            | 0  | "Provided user id is invalid!"                                                                                      |
 
     Scenario: get all games - testing /games endpoint
 
-        * url baseUrl
         * path 'games'
         * method get
         * status 200
@@ -52,7 +49,6 @@ Feature: Simple Smoke Tests Of Express Server Endpoints
 
     Scenario Outline: get game by id - testing /game/id endpoint
 
-        * url baseUrl
         * path 'game/' + '<id>'
         * method get
         * status 200
@@ -68,7 +64,6 @@ Feature: Simple Smoke Tests Of Express Server Endpoints
 
     Scenario: get all reviews - testing /reviews endpoint
 
-        * url baseUrl
         * path 'reviews'
         * method get
         * status 200
@@ -78,7 +73,6 @@ Feature: Simple Smoke Tests Of Express Server Endpoints
 
     Scenario Outline: get review by id - testing /review/id endpoint
 
-        * url baseUrl
         * path 'review/' + '<id>'
         * method get
         * status 200
