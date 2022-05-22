@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-    baseUrl: 'http://localhost:5555'
+    baseUrl: 'http://localhost:5554'
   }
   if (env == 'dev') {
     // customize
