@@ -1,4 +1,4 @@
-Feature: Test Cases for all POST and Delete methods exposed by Express Sever
+Feature: Test Cases for all POST and Delete methods exposed by Express Server
 
      # List of Test Cases:
 
